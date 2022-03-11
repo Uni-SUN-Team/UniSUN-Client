@@ -20,8 +20,6 @@ export default NextAuth({
         password: {label: 'Password', type: 'password', placeholder: 'Password'},
       },
       async authorize(credentials: IForm | undefined) {
-        console.log('credentials', credentials);
-
         if (credentials?.username === 'john' && credentials?.password === 'test') {
           return {
             id: 1,

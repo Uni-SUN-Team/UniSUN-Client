@@ -19,10 +19,10 @@ export default NextAuth({
         username: {label: 'Username', type: 'text', placeholder: 'Username'},
         password: {label: 'Password', type: 'password', placeholder: 'Password'},
       },
-      async authorize(credentials: IForm) {
+      async authorize(credentials: IForm | undefined) {
         console.log('credentials', credentials);
 
-        if (credentials.username === 'john' && credentials.password === 'test') {
+        if (credentials?.username === 'john' && credentials?.password === 'test') {
           return {
             id: 1,
             username: 'john',
@@ -87,7 +87,7 @@ export default NextAuth({
     // A secret to use for key generation (you should set this explicitly)
     secret: process.env.SECRET,
     // Set to true to use encryption (default: false)
-    encryption: true,
+    // encryption: true,
     // You can define your own encode/decode functions for signing and encryption
     // if you want to override the default behaviour.
     // encode: async ({ secret, token, maxAge }) => {},

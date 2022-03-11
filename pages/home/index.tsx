@@ -14,7 +14,6 @@ const Container = styled.div`
 
 const Home: NextPage = () => {
   const {data: session} = useSession();
-  console.log('session :>> ', session);
   return (
     <Container>
       <div>Welcome to Home</div>

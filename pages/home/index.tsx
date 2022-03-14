@@ -6,19 +6,21 @@ import {getSession, GetSessionParams, signOut, useSession} from 'next-auth/react
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 const Home: NextPage = () => {
-  const {data: session} = useSession();
+  // const {data: session} = useSession();
   return (
     <Container>
       <div>Welcome to Home</div>
       <br />
-      <button onClick={() => signOut()}>SignOut</button>
+      {/* <button onClick={() => signOut()}>SignOut</button> */}
     </Container>
   );
 };

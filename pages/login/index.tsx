@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import type {NextPage} from 'next';
 import styled from 'styled-components';
 import {signIn} from 'next-auth/react';
+import Router from 'next/router';
 
 const Container = styled.div`
   width: 100vw;
@@ -17,10 +18,12 @@ const Login: NextPage = () => {
   const [password, setPassword] = useState('');
 
   const onLogin = () => {
-    signIn('credentials', {
-      username,
-      password,
-    });
+    // signIn('credentials', {
+    //   username,
+    //   password,
+    // });
+
+    Router.push('/home');
   };
   return (
     <Container>

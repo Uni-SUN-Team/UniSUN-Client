@@ -1,18 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  async redirects() {
-    return [
+  i18n: {
+    locales: ["en-US", "TH"],
+    defaultLocale: "en-US",
+    domains: [
       {
-        source: '/',
-        destination: '/login',
-        permanent: true,
+        domain: "localhost",
+        defaultLocale: "en-US",
+        http: true,
       },
-    ];
+      {
+        domain: "localhost.th",
+        defaultLocale: "TH",
+        http: true,
+      },
+    ],
   },
-  compiler: {
-    styledComponents: true,
-  },
+  images: { domains: ["lh3.googleusercontent.com"], formats: ["image/avif", "image/webp"] },
 };
-
-module.exports = nextConfig;

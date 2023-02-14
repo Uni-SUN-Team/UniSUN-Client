@@ -1,0 +1,8 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "css.lint.unknownAtRules": "ignore",
+  "diffEditor.maxFileSize": 100,
+  "editor.minimap.maxColumn": 200,
+  "prettier.printWidth": 100
+}
